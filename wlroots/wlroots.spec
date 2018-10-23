@@ -37,7 +37,7 @@ BuildRequires:  libxkbcommon-devel
 BuildRequires:  mesa-libEGL-devel
 BuildRequires:  mesa-libgbm-devel
 BuildRequires:  mesa-libGLES-devel
-BuildRequires:  meson
+BuildRequires:  meson >= 0.48.0
 BuildRequires:  pixman-devel
 BuildRequires:  systemd-devel
 BuildRequires:  wayland-devel

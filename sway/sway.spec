@@ -20,7 +20,7 @@ Requires:       json-c
 Requires:       libcap
 Requires:       pango
 Requires:       pcre
-Requires:       wlroots
+Requires:       wlroots >= 0.1
 Requires:       xcb-util-image
 BuildRequires:  cairo-devel
 BuildRequires:  gcc
@@ -34,7 +34,7 @@ BuildRequires:  pango-devel
 BuildRequires:  pcre-devel
 BuildRequires:  scdoc
 BuildRequires:  wayland-protocols-devel
-BuildRequires:  wlroots-devel
+BuildRequires:  wlroots-devel >= 0.1
 BuildRequires:  xcb-util-image-devel
 
 %description
