@@ -3,12 +3,12 @@
 %global project         swaywm
 %global repo            wlroots
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit          28b0a4065b8d37b5301fb75377f1859b1b08af0b
+%global commit          9e060be04bf25c111ce7906967ac3c714ccb2db3
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           wlroots
-Version:        0.0.1
-Release:        4.git%{shortcommit}%{?dist}
+Version:        0.1
+Release:        0.0%{?dist}
 Summary:        Pluggable, composable, unopinionated modules for building a Wayland compositor
 License:        MIT
 URL:            https://%{provider_prefix}
@@ -82,6 +82,9 @@ Requires:       wlroots
 %{_includedir}/wlr/*
 
 %changelog
+* Tue Oct 23 2018 Jarkko Oranen <oranenj@iki.fi> - 0.1-0.0
+- Code update for sway 1.0-beta.1 release
+
 * Tue Aug 7 2018 Marcin Skarbek <rpm@skarbek.name> - 0.0.1-4.git28b0a40
 - Code update for sway 1.0-alpha.5 release
 

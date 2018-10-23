@@ -3,17 +3,17 @@
 %global project         swaywm
 %global repo            sway
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit          0cd418ba42bf7fa9570a2c1c09cea153d3337c7a
+%global commit          3f02218b54645a68a7496eb15b7bb16d26b75ae2
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           sway
 Version:        1.0
-Release:        0.5.git%{shortcommit}%{?dist}
+Release:        1.beta.1%{?dist}
 Summary:        i3-compatible Wayland compositor
 License:        MIT
 URL:            http://swaywm.org/
 # https://%{provider_prefix}/archive/%{commit}/%{repo}-%{shortcommit}.tar.gz
-Source:         https://github.com/swaywm/sway/archive/1.0-alpha.5.tar.gz
+Source:         https://github.com/swaywm/sway/archive/1.0-beta.1.tar.gz
 Requires:       cairo
 Requires:       gdk-pixbuf2
 Requires:       json-c
@@ -41,7 +41,7 @@ BuildRequires:  xcb-util-image-devel
 %{summary}.
 
 %prep
-%setup -q -n %{repo}-1.0-alpha.5
+%setup -q -n %{repo}-1.0-beta.1
 
 %build
 %meson
@@ -102,6 +102,9 @@ BuildRequires:  xcb-util-image-devel
 %{_datarootdir}/zsh/site-functions/_swaymsg
 
 %changelog
+* Tue Oct 23 2018 Jarkko Oranen <oranenj@iki.fi> - 1.0-0.1.beta.1
+- New release
+
 * Tue Aug 7 2018 Marcin Skarbek <rpm@skarbek.name> - 1.0-0.5.git0cd418b
 - New release
 
