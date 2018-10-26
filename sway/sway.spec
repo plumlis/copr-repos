@@ -93,12 +93,17 @@ BuildRequires:  xcb-util-image-devel
 %{_mandir}/man1/swaynag.1.gz
 %{_mandir}/man5/sway-bar.5.gz
 %{_mandir}/man5/sway-input.5.gz
+%{_mandir}/man5/sway-output.5.gz
 %{_mandir}/man5/sway.5.gz
 %{_mandir}/man5/swaynag.5.gz
 %{_datarootdir}/wayland-sessions/sway.desktop
 %{_datarootdir}/zsh/site-functions/_sway
 %{_datarootdir}/zsh/site-functions/_swaylock
 %{_datarootdir}/zsh/site-functions/_swaymsg
+%{_datarootdir}/fish/completions/sway.fish
+%{_datarootdir}/fish/completions/swaylock.fish
+%{_datarootdir}/fish/completions/swaymsg.fish
+
 
 %changelog
 * Tue Oct 23 2018 Jarkko Oranen <oranenj@iki.fi> - 1.0-0.1.beta.1
