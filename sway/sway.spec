@@ -57,7 +57,6 @@ BuildRequires:  xcb-util-image-devel
 %license LICENSE
 %doc README*.md
 %doc CONTRIBUTING.md
-%doc HACKING.md
 %{_sysconfdir}/pam.d/swaylock
 %{_sysconfdir}/sway/config
 %{_sysconfdir}/sway/security.d/00-defaults
