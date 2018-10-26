@@ -16,6 +16,7 @@ BuildRequires:  libtool
 BuildRequires:  make
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xcb)
+BuildRequires:  pkgconfig(xcb-proto)
 BuildRequires:  pkgconfig(x11)
 
 %description
