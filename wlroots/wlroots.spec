@@ -28,6 +28,7 @@ Requires:       pixman
 Requires:       systemd
 Requires:       xcb-util-image
 Requires:       xcb-util-wm
+Requires:       xcb-util-errors
 BuildRequires:  ctags-etags
 BuildRequires:  gcc
 BuildRequires:  libcap-devel
@@ -44,6 +45,7 @@ BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  xcb-util-image-devel
 BuildRequires:  xcb-util-wm-devel
+BuildRequires:  xcb-util-errors-devel
 
 %description
 %{summary}.
