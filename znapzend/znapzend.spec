@@ -20,7 +20,7 @@ progresses.
 
 %prep
 %setup
-%patch0 -p0
+%patch0 -p1
 
 %build
 %configure --libdir %{perl_vendorlib}
