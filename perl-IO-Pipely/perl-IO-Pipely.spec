@@ -5,7 +5,7 @@ Summary:        Portably create pipe() or pipe-like handles, one way or another
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/IO-Pipely/
-Source0:        http://www.cpan.org/authors/id/R/RC/RCAPUTO/IO-Pipely-%{version}.tar.gz
+Source0:        https://www.cpan.org/authors/id/R/RC/RCAPUTO/IO-Pipely-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  perl >= 0:5.004
