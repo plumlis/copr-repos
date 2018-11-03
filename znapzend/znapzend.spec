@@ -7,6 +7,8 @@ URL: http://www.znapzend.org
 Source: https://github.com/oetiker/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0: 00_remove_deprecated_slurp.patch
 Requires: perl
+Requires: perl(Mojo::Base)
+Requires: perl-Mojo-IOLoop-ForkCall
 BuildRequires: perl
 BuildRequires: systemd
 
