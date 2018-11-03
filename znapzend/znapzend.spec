@@ -7,6 +7,7 @@ URL: http://www.znapzend.org
 Source: https://github.com/oetiker/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Requires: perl
 BuildRequires: perl
+BuildRequires: systemd
 
 %description
 ZnapZend is a ZFS centric backup tool. It relies on snapshot, send and
