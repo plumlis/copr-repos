@@ -5,7 +5,7 @@ Summary:        (DEPRECATED) run blocking functions asynchronously by forking
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Mojo-IOLoop-ForkCall/
-Source0:        http://www.cpan.org/authors/id/J/JB/JBERGER/Mojo-IOLoop-ForkCall-%{version}.tar.gz
+Source0:        https://www.cpan.org/authors/id/J/JB/JBERGER/Mojo-IOLoop-ForkCall-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  perl(IO::Pipely)
