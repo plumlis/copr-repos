@@ -15,11 +15,15 @@ receive to do its work. It has the built-in ability to manage both local
 snapshots as well as remote copies by thinning them out as time
 progresses.
 
+%global debug_package %{nil}
+
 %prep
 %setup
 
 %build
-%configure
+%configure --libdir %{perl_vendorlib}
+# Hack: prevent installing stuff via CPAN
+sed -i 's/thirdparty//g' Makefile 
 make
 
 %install
@@ -31,5 +35,7 @@ mkdir -p $RPM_BUILD_ROOT/%{_unitdir}
 %files
 %doc README.md LICENSE COPYRIGHT CHANGES
 %{_bindir}/*
+%{perl_vendorlib}/*
+%{perl_vendorlib}/*/*
 %{_mandir}/*/*
 %{_unitdir}/*
