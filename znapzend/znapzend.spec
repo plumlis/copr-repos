@@ -5,6 +5,7 @@ Summary: zfs backup with remote capabilities and mbuffer integration
 License: GPLv3+
 URL: http://www.znapzend.org
 Source: https://github.com/oetiker/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Patch0: 00_remove_deprecated_slurp.patch
 Requires: perl
 BuildRequires: perl
 BuildRequires: systemd
@@ -19,6 +20,7 @@ progresses.
 
 %prep
 %setup
+%patch0 -p0
 
 %build
 %configure --libdir %{perl_vendorlib}
