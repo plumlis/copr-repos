@@ -13,7 +13,7 @@ Summary: Adjusts the color temperature of your screen according to time of day
 License: GPLv3+
 
 URL:     http://jonls.dk/redshift/
-Source0: https://github.com/minus7/redshift/archive/wayland.tar.gz
+Source0: https://github.com/minus7/redshift/archive/%{commit}/wayland.tar.gz
 
 BuildRequires: libtool
 BuildRequires: intltool
