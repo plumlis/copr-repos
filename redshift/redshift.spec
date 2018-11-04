@@ -23,6 +23,7 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXxf86vm-devel
 BuildRequires: GConf2-devel
 BuildRequires: geoclue2-devel
+BuildRequires: wayland-devel
 BuildRequires: wayland-protocols-devel
 %{?systemd_requires}
 BuildRequires: systemd
