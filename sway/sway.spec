@@ -41,7 +41,7 @@ BuildRequires:  xcb-util-image-devel
 %{summary}.
 
 %prep
-%setup -q -n %{repo}-${commit}
+%setup -q -n %{repo}-%{commit}
 
 %build
 %meson
