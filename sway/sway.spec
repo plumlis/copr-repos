@@ -103,6 +103,8 @@ BuildRequires:  xcb-util-image-devel
 %{_datarootdir}/fish/completions/sway.fish
 %{_datarootdir}/fish/completions/swaylock.fish
 %{_datarootdir}/fish/completions/swaymsg.fish
+%{_datarootdir}/fish/completions/swayidle.fish
+%{_datarootdir}/fish/completions/swaynag.fish
 
 
 %changelog
