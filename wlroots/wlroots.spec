@@ -3,12 +3,12 @@
 %global project         swaywm
 %global repo            wlroots
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit          9e060be04bf25c111ce7906967ac3c714ccb2db3
+%global commit          d7b010024a4e46acb1eb5c54c1ce31dd816fb995
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           wlroots
 Version:        0.1
-Release:        0.0%{?dist}
+Release:        1.git%{shortcommit}%{?dist}
 Summary:        Pluggable, composable, unopinionated modules for building a Wayland compositor
 License:        MIT
 URL:            https://%{provider_prefix}
