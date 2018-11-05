@@ -3,12 +3,12 @@
 %global project         swaywm
 %global repo            sway
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit          d19648a304dd7c6731ce53a7b7a265019f5b4473
+%global commit          e9c77970fa23a7eda88fc0dde684961e3caca5e9
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           sway
-Version:        1.0
-Release:        1.beta.2.git%{shortcommit}%{?dist}
+Version:        1.0.git%{shortcommit}
+Release:        2%{?dist}
 Summary:        i3-compatible Wayland compositor
 License:        MIT
 URL:            http://swaywm.org/
