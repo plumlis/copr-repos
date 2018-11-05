@@ -7,8 +7,8 @@
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           wlroots
-Version:        0.1
-Release:        1.git%{shortcommit}%{?dist}
+Version:        0.1.git%{shortcommit}
+Release:        2%{?dist}
 Summary:        Pluggable, composable, unopinionated modules for building a Wayland compositor
 License:        MIT
 URL:            https://%{provider_prefix}
