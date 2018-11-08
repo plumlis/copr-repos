@@ -1,5 +1,5 @@
 Name:           scdoc
-Version:        1.4.1
+Version:        1.5.2
 Release:        1%{?dist}
 Summary:        Tool for generating roff manual pages
 License:        MIT
@@ -47,6 +47,9 @@ make check
 %{_mandir}/man1/%{name}.1.gz
 
 %changelog
+* Thu Nov 8 2018 Jarkko Oranen <oranenj@iki.fi> - 1.5.2-1
+- New release
+
 * Tue Aug 7 2018 Marcin Skarbek <rpm@skarbek.name> - 1.4.1-1
 - New release
 
