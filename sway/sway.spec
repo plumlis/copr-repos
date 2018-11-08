@@ -7,8 +7,8 @@
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           sway
-Version:        1.0.git%{shortcommit}
-Release:        2%{?dist}
+Version:        1.0
+Release:        3.git%{shortcommit}%{?dist}
 Summary:        i3-compatible Wayland compositor
 License:        MIT
 URL:            http://swaywm.org/
