@@ -7,8 +7,8 @@
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           mako
-Version:        1.1.git%{shortcommit}
-Release:        1%{?dist}
+Version:        1.1
+Release:        2.git%{shortcommit}%{?dist}
 Summary:        A lightweight Wayland notification daemon
 License:        MIT
 URL:            https://wayland.emersion.fr/mako
