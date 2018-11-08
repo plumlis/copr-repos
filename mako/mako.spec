@@ -21,6 +21,7 @@ BuildRequires:  meson
 BuildRequires:  pango-devel
 BuildRequires:  scdoc
 BuildRequires:  wayland-devel
+BuildRequires:  wayland-protocols-devel
 BuildRequires:  systemd-devel
 
 %description
