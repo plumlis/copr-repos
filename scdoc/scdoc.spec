@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Tool for generating roff manual pages
 License:        MIT
 URL:            https://git.sr.ht/~sircmpwn/%{name}
-Source0:        %{url}/archive/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{version}.tar.gz
 
 BuildRequires:  make
 BuildRequires:  gcc
@@ -16,7 +16,7 @@ friendly. It reads scdoc syntax from stdin and writes roff to stdout, suitable
 for reading with man.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}
 
 # Disable static linking
 sed -i '/-static/d' Makefile
