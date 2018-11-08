@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Tool for generating roff manual pages
 License:        MIT
 URL:            https://git.sr.ht/~sircmpwn/%{name}
-Source0:        %{url}/snapshot/%{name}-%{version}.tar.xz
+Source0:        %{url}/archive/%{name}-%{version}.tar.gz
 
 BuildRequires:  make
 BuildRequires:  gcc
