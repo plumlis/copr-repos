@@ -3,12 +3,12 @@
 %global project         emersion
 %global repo            mako
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit          d1e6585eb5c06f1e05c3ec77230a263d73cc103c
+%global commit          ce1978865935dbff1b3bf3065ff607a4178fe57b
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           mako
 Version:        1.1
-Release:        2.git%{shortcommit}%{?dist}
+Release:        3.git%{shortcommit}%{?dist}
 Summary:        A lightweight Wayland notification daemon
 License:        MIT
 URL:            https://wayland.emersion.fr/mako
@@ -46,7 +46,7 @@ BuildRequires:  systemd-devel
 %{_bindir}/mako
 %{_bindir}/makoctl
 %{_mandir}/man1/mako.1.gz
-%{_mandir}/man1/swayctl.1.gz
+%{_mandir}/man1/makoctl.1.gz
 
 
 %changelog
