@@ -7,8 +7,8 @@
 %define commit a2177ed9942477868ccc514372f32a0fbcbe189e
 
 Name:    redshift
-Version: 1.12.gita2177ed
-Release: 2%{dist}
+Version: 1.12.1
+Release: 0.gita2177ed%{dist}
 Summary: Adjusts the color temperature of your screen according to time of day
 License: GPLv3+
 
