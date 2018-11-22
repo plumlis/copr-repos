@@ -45,6 +45,7 @@ make check
 %doc README.md
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man5/%{name}.5.gz
 
 %changelog
 * Thu Nov 8 2018 Jarkko Oranen <oranenj@iki.fi> - 1.5.2-1
