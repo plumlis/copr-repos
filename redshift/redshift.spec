@@ -4,7 +4,7 @@
 %bcond_with python3
 %endif
 
-%define commit a2177ed9942477868ccc514372f32a0fbcbe189e
+%define commit 7da875d34854a6a34612d5ce4bd8718c32bec804
 
 Name:    redshift
 Version: 1.12.1
