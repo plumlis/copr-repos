@@ -1,0 +1,21 @@
+diff -pruN mozc-2.23.2815.102.orig/prediction/zero_query_dict.h mozc-2.23.2815.102/prediction/zero_query_dict.h
+--- mozc-2.23.2815.102.orig/prediction/zero_query_dict.h	2018-01-26 18:48:12.000000000 +0900
++++ mozc-2.23.2815.102/prediction/zero_query_dict.h	2018-06-01 16:08:24.548653648 +0900
+@@ -147,6 +147,17 @@ class ZeroQueryDict {
+       return iter;
+     }
+ 
++    iterator &operator--() {
++      ptr_ -= kTokenByteSize;
++      return *this;
++    }
++
++    iterator operator--(int) {
++      const iterator tmp(ptr_, string_array_);
++      ptr_ -= kTokenByteSize;
++      return tmp;
++    }
++
+     iterator &operator-=(ptrdiff_t n) {
+       ptr_ -= n * kTokenByteSize;
+       return *this;

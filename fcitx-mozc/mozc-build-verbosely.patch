@@ -1,0 +1,12 @@
+diff -pruN mozc.orig/build_mozc.py mozc/build_mozc.py
+--- mozc.orig/build_mozc.py	2017-02-06 14:50:59.124605000 +0900
++++ mozc/build_mozc.py	2017-02-06 19:57:20.289605000 +0900
+@@ -828,7 +828,7 @@ def BuildWithNinja(options, targets):
+   ninja = GetNinjaPath()
+ 
+   ninja_targets = [GetNinjaTargetName(target) for target in targets]
+-  RunOrDie([ninja, '-C', build_arg] + ninja_targets)
++  RunOrDie([ninja, '-v', '-C', build_arg] + ninja_targets)
+ 
+ 
+ def BuildOnWindows(targets):

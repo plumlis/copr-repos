@@ -1,0 +1,11 @@
+diff -pruN mozc.orig/gyp/common.gypi mozc/gyp/common.gypi
+--- mozc.orig/gyp/common.gypi	2017-02-06 15:12:33.972605000 +0900
++++ mozc/gyp/common.gypi	2017-02-07 21:23:50.018605000 +0900
+@@ -106,6 +106,7 @@
+     # Libraries for GNU/Linux environment.
+     'linux_ldflags': [
+       '-pthread',
++      '-Wl,--build-id',
+     ],
+ 
+     'conditions': [
