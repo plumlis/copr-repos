@@ -19,7 +19,7 @@ Patch3:		mozc-build-id.patch
 Patch4:         mozc-fix-build-stdc.patch
 Patch5:		https://download.fcitx-im.org/fcitx-mozc/fcitx-mozc-2.23.2815.102.1.patch
 
-BuildRequires:	python gettext
+BuildRequires:	python2 gettext
 BuildRequires:	libstdc++-devel zlib-devel libxcb-devel protobuf-devel protobuf-c glib2-devel qt5-devel zinnia-devel gtk2-devel
 BuildRequires:	clang ninja-build
 BuildRequires:	gyp >= 0.1-0.4.840svn
@@ -47,6 +47,8 @@ This package contains the Input Method Engine for Fcitx.
 
 
 %build
+# Hack to make this build. Not needed afterwards
+ln -s /usr/bin/python2 /usr/bin/python
 # replace compiler flags to build with the proper debugging information
 t=`mktemp /tmp/mozc.gyp-XXXXXXXX`
 #opts=$(for i in $(echo $RPM_OPT_FLAGS); do #|sed -e 's/-fstack-clash-protection//g' -e 's/-fcf-protection//g'); do
