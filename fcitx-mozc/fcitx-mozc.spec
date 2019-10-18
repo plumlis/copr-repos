@@ -1,7 +1,7 @@
 %define specver 0.3
 Name:		fcitx-mozc
 Version:	2.23.2815.102
-Release:	1%{?dist}
+Release:	8%{?dist}
 Summary:	The mozc engine for Fcitx input method
 
 Group:		System Environment/Libraries
@@ -18,8 +18,10 @@ Patch2:		mozc-build-verbosely.patch
 Patch3:		mozc-build-id.patch
 Patch4:         mozc-fix-build-stdc.patch
 Patch5:		https://download.fcitx-im.org/fcitx-mozc/fcitx-mozc-2.23.2815.102.1.patch
+Patch6:         mozc-new-era.patch
+Patch7:         mozc-python3.patch
 
-BuildRequires:	python2 gettext
+BuildRequires:	python gettext
 BuildRequires:	libstdc++-devel zlib-devel libxcb-devel protobuf-devel protobuf-c glib2-devel qt5-devel zinnia-devel gtk2-devel
 BuildRequires:	clang ninja-build
 BuildRequires:	gyp >= 0.1-0.4.840svn
@@ -44,11 +46,11 @@ This package contains the Input Method Engine for Fcitx.
 %patch3 -p1 -b .3-build-id
 %patch4 -p1 -b .4-stdc
 %patch5 -p2 -b .5-fcitx
+%patch6 -p1 -b .5-new-era
+%patch7 -p1 -b .5-py3
 
 
 %build
-# Hack to make this build. Not needed afterwards
-ln -s /usr/bin/python2 /usr/bin/python
 # replace compiler flags to build with the proper debugging information
 t=`mktemp /tmp/mozc.gyp-XXXXXXXX`
 #opts=$(for i in $(echo $RPM_OPT_FLAGS); do #|sed -e 's/-fstack-clash-protection//g' -e 's/-fcf-protection//g'); do
@@ -124,6 +126,9 @@ rm -rf fcitx-mozc-icons.tar.gz
 
 
 %changelog
+* Fri Oct 18 2019 Jarkko Oranen <oranenj@iki.fi> - 2.23.2815.102-8
+- Updated to build on Fedora 31 with Python 3
+
 * Sat Aug 25 2018 Ryo HAYAKAWA <ryo@fastriver.net> - specver 0.3
 - Modified to match to the Fedora Copr system.
 
