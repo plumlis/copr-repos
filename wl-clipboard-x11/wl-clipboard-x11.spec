@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           wl-clipboard-x11
 Version:        4 
 Release:        1%{?dist}
@@ -20,13 +22,15 @@ wl-clipboard alternatives to X clipboard tools
 
 
 %build
-%make_build
+echo "Nothing to do"
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %make_install
-
+rm -f %{buildroot}/usr/bin/xclip
+rm -f %{buildroot}/usr/bin/xsel
+install -p %{buildroot}/usr/share/wl-clipboard-x11/wl-clipboard-x11 %{buildroot}/usr/bin/xclip
+install -p %{buildroot}/usr/share/wl-clipboard-x11/wl-clipboard-x11 %{buildroot}/usr/bin/xsel
 
 %files
 /usr/bin/xclip
