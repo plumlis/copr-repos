@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        i3-compatible window manager for Wayland
 License:        MIT
 URL:            https://github.com/swaywm/sway
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/releases/download/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -51,6 +51,7 @@ i3-compatible configuration.
 %autosetup -p 1
 
 %build
+ls -l
 %meson
 %meson_build
 
