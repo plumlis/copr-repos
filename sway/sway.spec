@@ -6,8 +6,6 @@ License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
-Patch0001: 0001-layer-shell-don-t-give-focus-to-unmapped-layer-surfa.patch
-
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  make
