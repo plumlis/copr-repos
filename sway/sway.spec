@@ -1,6 +1,6 @@
 Name:           sway
 Version:        1.4
-Release:        4%{?dist}
+Release:        1%{?dist}
 Summary:        i3-compatible window manager for Wayland
 License:        MIT
 URL:            https://github.com/swaywm/sway
