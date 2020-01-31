@@ -84,8 +84,6 @@ sed -i "s|^output \* bg .*|output * bg /usr/share/backgrounds/f%{fedora}/default
 %dir %{_datadir}/bash-completion/completions
 %{_datadir}/bash-completion/completions/sway*
 %dir %{_datadir}/fish
-%dir %{_datadir}/fish/completions
-%{_datadir}/fish/completions/sway*
 %{_datadir}/backgrounds/sway
 
 %changelog
