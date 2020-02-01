@@ -1,5 +1,5 @@
 Name:           grim
-Version:        1.2.0
+Version:        1.3.0
 Release:        1%{?dist}
 Summary:        A screenshotting tool for Wayland compositors
 
@@ -30,5 +30,7 @@ A screenshotting tool for wayland
 /usr/bin/grim
 
 %changelog
+* Sat Feb 01 2020 Jarkko Oranen
+- 1.3.0
 * Tue Nov 19 2019 Jarkko Oranen
 - 1.2.0
