@@ -1,6 +1,6 @@
 Name:       mako
 Version:    1.4.1
-Release:    2%{?dist}
+Release:    1%{?dist}
 Summary:    Lightweight Wayland notification daemon
 Provides:   desktop-notification-daemon
 
