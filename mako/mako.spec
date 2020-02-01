@@ -57,6 +57,7 @@ install -m0644 -Dt %{buildroot}%{_userunitdir}/ %{SOURCE1}
 %{_bindir}/mako
 %{_bindir}/makoctl
 %{_mandir}/man1/mako.1*
+%{_mandir}/man5/mako.5*
 %{_mandir}/man1/makoctl.1*
 %{_userunitdir}/%{name}.service
 %{_datadir}/dbus-1/services/fr.emersion.mako.service
@@ -65,6 +66,9 @@ install -m0644 -Dt %{buildroot}%{_userunitdir}/ %{SOURCE1}
 %{_datadir}/zsh/site-functions/_mako*
 
 %changelog
+* Sat Feb 01 2020 Jarkko Oranen <oranenj@iki.fi> - 1.4.1-1
+- Upstream 1.4.1 release
+
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
