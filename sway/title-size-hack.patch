@@ -1,0 +1,104 @@
+From 689aca66dad0cd6b4da6911c0e9a4805a3667d3e Mon Sep 17 00:00:00 2001
+From: Jarkko Oranen <oranenj@iki.fi>
+Date: Fri, 13 Mar 2020 21:33:05 +0200
+Subject: [PATCH 1/2] Don't use title content in size calculations
+
+This prevents distracting screen flashing and seems to work fine
+for larger glyphs as well (Tested with Japanese).
+
+This is perhaps not the best solution, but it's much less noticeable
+than the current behaviour.
+
+Fixes #4992
+---
+ include/sway/tree/container.h |  1 +
+ sway/desktop/render.c         | 10 ++++++----
+ sway/tree/container.c         | 21 ++++++++++++++++-----
+ 3 files changed, 23 insertions(+), 9 deletions(-)
+
+diff --git a/include/sway/tree/container.h b/include/sway/tree/container.h
+index 5cf5b6b1..d3c033ff 100644
+--- a/include/sway/tree/container.h
++++ b/include/sway/tree/container.h
+@@ -141,6 +141,7 @@ struct sway_container {
+ 	struct wlr_texture *title_urgent;
+ 	size_t title_height;
+ 	size_t title_baseline;
++	size_t leak_padding;
+ 
+ 	list_t *marks; // char *
+ 	struct wlr_texture *marks_focused;
+diff --git a/sway/desktop/render.c b/sway/desktop/render.c
+index 4aa7bd85..1135fa9f 100644
+--- a/sway/desktop/render.c
++++ b/sway/desktop/render.c
+@@ -507,11 +507,13 @@ static void render_titlebar(struct sway_output *output,
+ 
+ 		// The title texture might be shorter than the config->font_height,
+ 		// in which case we need to pad it above and below.
+-		int ob_padding_above = round((config->font_baseline -
++		int ob_padding_unscaled = (config->font_baseline -
+ 					con->title_baseline + titlebar_v_padding -
+-					titlebar_border_thickness) * output_scale);
+-		int ob_padding_below = ob_bg_height - ob_padding_above -
+-			texture_box.height;
++					titlebar_border_thickness);
++		int ob_padding_above = round(fmax(0, (ob_padding_unscaled - (int)con->leak_padding)) * output_scale);
++		int ob_padding_below = ob_bg_height - ob_padding_above
++			- texture_box.height;
++		sway_log(SWAY_DEBUG, "Padding orig: %d, above %d, below %d, leak: %zu", ob_padding_unscaled, ob_padding_above, ob_padding_below, con->leak_padding);
+ 
+ 		// Render texture
+ 		if (texture_box.width > ob_inner_width - ob_marks_width) {
+diff --git a/sway/tree/container.c b/sway/tree/container.c
+index 56cdee1d..c38000b3 100644
+--- a/sway/tree/container.c
++++ b/sway/tree/container.c
+@@ -33,6 +33,7 @@ struct sway_container *container_create(struct sway_view *view) {
+ 	c->layout = L_NONE;
+ 	c->view = view;
+ 	c->alpha = 1.0f;
++	c->leak_padding = 0;
+ 
+ 	if (!view) {
+ 		c->children = create_list();
+@@ -444,7 +445,7 @@ static void update_title_texture(struct sway_container *con,
+ 
+ 	double scale = output->wlr_output->scale;
+ 	int width = 0;
+-	int height = con->title_height * scale;
++	int height = (con->title_height + (con->leak_padding*2)) * scale;
+ 
+ 	// We must use a non-nil cairo_t for cairo_set_font_options to work.
+ 	// Therefore, we cannot use cairo_create(NULL).
+@@ -509,13 +510,23 @@ void container_calculate_title_height(struct sway_container *container) {
+ 		return;
+ 	}
+ 	cairo_t *cairo = cairo_create(NULL);
+-	int height;
+-	int baseline;
++	int height, ascii_height;
++	int baseline, ascii_baseline;
++	/* Calculate height using regular ASCII characters and allow larger glyphs to
++	 * "leak" into the margins. This avoids distracting height changes if switching
++	 * between containers that have differently sized text.
++	 * Larger characters might get cut off, but affected users can work around it by
++	 * increasing the title margins */
++	get_text_size(cairo, config->font, NULL, &ascii_height, &ascii_baseline, 1,
++			config->pango_markup, "%s", "ASCII Baseline");
+ 	get_text_size(cairo, config->font, NULL, &height, &baseline, 1,
+ 			config->pango_markup, "%s", container->formatted_title);
++
+ 	cairo_destroy(cairo);
+-	container->title_height = height;
+-	container->title_baseline = baseline;
++	container->title_height = ascii_height;
++	container->title_baseline = ascii_baseline;
++	container->leak_padding = floor((height - ascii_height) + (baseline - ascii_baseline) / 2);
++	sway_log(SWAY_DEBUG, "Setting padding leak: %zu", container->leak_padding);
+ }
+ 
+ /**
+-- 
+2.25.1
+

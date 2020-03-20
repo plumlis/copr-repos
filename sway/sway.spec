@@ -1,12 +1,13 @@
 Name:           sway
 Version:        1.4
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        i3-compatible window manager for Wayland
 License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        %{url}/releases/download/%{version}/%{name}-%{version}.tar.gz
 Patch1:         https://github.com/swaywm/sway/commit/29a5ce5f65d04b046271fbe53850836c77bbee80.patch#/link-with-fno-common.patch
 Patch2:         https://github.com/swaywm/sway/pull/4991.patch#/sway.fix-null-strcmp.patch
+Patch3:         title-size-hack.patch
 
 # FIXME: wlroots require `pkgconfig(egl)`, but assumes mesa provides it
 # (and uses it's extension header `<EGL/eglmesaext.h>).
