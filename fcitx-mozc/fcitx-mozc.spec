@@ -1,7 +1,7 @@
 %define specver 0.3
 Name:		fcitx-mozc
 Version:	2.23.2815.102
-Release:	8%{?dist}
+Release:	9%{?dist}
 Summary:	The mozc engine for Fcitx input method
 
 Group:		System Environment/Libraries
@@ -126,7 +126,7 @@ rm -rf fcitx-mozc-icons.tar.gz
 
 
 %changelog
-* Fri Oct 18 2019 Jarkko Oranen <oranenj@iki.fi> - 2.23.2815.102-8
+* Fri Oct 18 2019 Jarkko Oranen <oranenj@iki.fi> - 2.23.2815.102-9
 - Updated to build on Fedora 31 with Python 3
 
 * Sat Aug 25 2018 Ryo HAYAKAWA <ryo@fastriver.net> - specver 0.3
